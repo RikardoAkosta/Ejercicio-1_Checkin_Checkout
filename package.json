@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.18.1"
+  },
+  "name": "ejercicio1_checkin_checkout",
+  "version": "1.0.0",
+  "main": "app.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RikardoAkosta/Ejercicio-1_Checkin_Checkout.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RikardoAkosta/Ejercicio-1_Checkin_Checkout/issues"
+  },
+  "homepage": "https://github.com/RikardoAkosta/Ejercicio-1_Checkin_Checkout#readme",
+  "description": ""
+}
