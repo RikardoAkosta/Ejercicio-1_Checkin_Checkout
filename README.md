@@ -10,4 +10,5 @@ Necesito una aplicación que sea capaz de capturar la hora de entrada y de salid
 3.  Crear un servidor de express, corriendo en el puerto de su gusto
     Conectarse a su base de datos en PostgreSQL
     Crear el siguiente modelo basado en el siguiente diagrama:
+
     (FUENTE Academnlo profesor Max Urbina)
