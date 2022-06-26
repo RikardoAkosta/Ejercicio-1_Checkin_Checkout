@@ -1,7 +1,7 @@
 const { db, DataTypes } = require("../utils/database.util"); //aqui estamos importando el modelo de usuarios
 
 //Creando primer modelo despues de autenticacion (tabla en postgres)
-const Registrations = db.define(`registrations`, {
+const Registrations = db.define(`registration`, {
   //cuando ponemos la constante User con mayuscula nosindica que es un modelo de sequelize
   id: {
     type: DataTypes.INTEGER,

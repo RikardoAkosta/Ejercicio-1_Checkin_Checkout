@@ -2,7 +2,7 @@ const express = require("express");
 
 //Controllers
 const {
-  getRegistrations,
+  getAllRegistrations,
   createRegistrations,
   getRegistrationsById,
   updateRegistrations,
@@ -11,9 +11,9 @@ const {
 
 const registrationsRouter = express.Router(); //cambiaremos esta const por la const app y asi optimizar laurl users, para pos no serviviria
 
-registrationsRouter.get("/", getRegistrations); //aqui le decimos a express que va a usar el router de usuarios{
+registrationsRouter.get("/", getAllRegistrations); //aqui le decimos a express que va a usar el router de usuarios{
 //vamos recibir una peticion post con el metodo post desde postman simulando el frontend.
-registrationsRouter.post("/:id", createRegistrations);
+registrationsRouter.post("/", createRegistrations);
 
 //consultar un usuario por id
 registrationsRouter.get("/:id", getRegistrationsById); //si ponemos un parametro dinamico en la ruta, podemos consultarlo con el metodo params
