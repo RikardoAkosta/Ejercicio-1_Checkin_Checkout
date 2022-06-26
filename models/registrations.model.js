@@ -1,7 +1,7 @@
 const { db, DataTypes } = require("../utils/database.util"); //aqui estamos importando el modelo de usuarios
 
 //Creando primer modelo despues de autenticacion (tabla en postgres)
-const User = db.define(`user`, {
+const Registrations = db.define(`registrations`, {
   //cuando ponemos la constante User con mayuscula nosindica que es un modelo de sequelize
   id: {
     type: DataTypes.INTEGER,
@@ -10,11 +10,11 @@ const User = db.define(`user`, {
     allowNull: false,
   },
   entranceTime: {
-    type: DataTypes.STRING,
+    type: DataTypes.DATE,
     allowNull: false,
   },
   exitTime: {
-    type: DataTypes.INTEGER, // hace referencia a que es un numero entero
+    type: DataTypes.DATE, // hace referencia a que es un numero entero
     allowNull: false,
   },
   status: {
@@ -24,4 +24,4 @@ const User = db.define(`user`, {
   },
 });
 
-module.exports = { User }; //exportamos el modelo de usuarios a user.model.js para que podamos usarlo en otros archivos
+module.exports = { Registrations }; //exportamos el modelo de usuarios a user.model.js para que podamos usarlo en otros archivos

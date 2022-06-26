@@ -1,8 +1,7 @@
 const express = require("express"); //aqui importamos express para poder usarlo en el codigo
 
 //Router
-const { usersRouter } = require("./routes/users.routes"); //aqui importamos el archivo users.routes.js y le pasamos el app para que pueda usarlo
-const { postsRouter } = require("./routes/posts.routes"); //aqui importamos el archivo posts.routes.js y le pasamos el app para que pueda usarlo
+const { registrationsRouter } = require("./routes/registrations.routes"); //aqui importamos el archivo users.routes.js y le pasamos el app para que pueda usarlo
 
 //Utils
 const { db } = require("./utils/database.util"); //aqui importamos el archivo database.util.js y le pasamos la db para que pueda usarla
@@ -15,8 +14,7 @@ app.use(express.json()); //aqui le decimos a express que va a usar el json esto 
 
 // esta es la tarea de crear un endpoint para obtener los posts de un usuario
 
-app.use("/users", usersRouter); //aqui le decimos a express que va a usar el router de usuarios
-app.use("/posts", postsRouter); //aqui le decimos a express que va a usar el router de posts
+app.use("/users", registrationsRouter); //aqui le decimos a express que va a usar el router de usuarios
 
 db.authenticate() //esta funcion es para verificar si la conexion esta bien o no
   .then(() => console.log("DB connected"))
