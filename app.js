@@ -14,7 +14,7 @@ app.use(express.json()); //aqui le decimos a express que va a usar el json esto 
 
 // esta es la tarea de crear un endpoint para obtener los posts de un usuario
 
-app.use("/users", registrationsRouter); //aqui le decimos a express que va a usar el router de usuarios
+app.use("/registrations", registrationsRouter); //aqui le decimos a express que va a usar el router de usuarios
 
 db.authenticate() //esta funcion es para verificar si la conexion esta bien o no
   .then(() => console.log("DB connected"))
@@ -26,6 +26,6 @@ db.sync() //esta funcion buscar y no  encuentra debera  crear las tablas que vam
   .catch(err => console.log(err));
 
 app.listen(4001, () => {
-  //aqui le decimos que escuche en el puerto 4000
+  //aqui le decimos que escuche en el puerto 4001
   console.log("Express app running!!");
 });
