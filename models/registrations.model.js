@@ -15,12 +15,12 @@ const Registrations = db.define(`registration`, {
   },
   exitTime: {
     type: DataTypes.DATE, // hace referencia a que es un numero entero
-    allowNull: false,
+    allowNull: true, //se pone tru porque aun no tenemos la hora de entrada
   },
   status: {
     type: DataTypes.STRING,
     allowNull: false,
-    defaultValue: "active", //para que el status sea activo por defecto
+    defaultValue: "active", //para que el status sea activo o esta trabajamdo
   },
 });
 

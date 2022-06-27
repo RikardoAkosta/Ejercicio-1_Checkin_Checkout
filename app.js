@@ -14,7 +14,7 @@ app.use(express.json()); //aqui le decimos a express que va a usar el json esto 
 
 // esta es la tarea de crear un endpoint para obtener los posts de un usuario
 
-app.use("/registrations", registrationsRouter); //aqui le decimos a express que va a usar el router de usuarios
+app.use("/api/v1/registrations", registrationsRouter); //aqui le decimos a express que va a usar el router de usuarios
 
 db.authenticate() //esta funcion es para verificar si la conexion esta bien o no
   .then(() => console.log("Data Base connected"))
