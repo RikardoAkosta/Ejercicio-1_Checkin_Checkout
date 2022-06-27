@@ -17,7 +17,7 @@ app.use(express.json()); //aqui le decimos a express que va a usar el json esto 
 app.use("/registrations", registrationsRouter); //aqui le decimos a express que va a usar el router de usuarios
 
 db.authenticate() //esta funcion es para verificar si la conexion esta bien o no
-  .then(() => console.log("DB connected"))
+  .then(() => console.log("Data Base connected"))
   .catch(err => console.log(err));
 //luego que nos hemos autenticado con la db podemos crear las tablas que vamos a usar
 

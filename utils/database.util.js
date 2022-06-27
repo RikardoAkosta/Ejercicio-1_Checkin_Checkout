@@ -1,6 +1,7 @@
 const { Sequelize, DataTypes } = require("sequelize"); //aqui eestamos desestructurando  a sequelize
 //connet to database with sequelize esto es progrmacion orientada a objetos
 const db = new Sequelize({
+  //db representa la conexion a la base de datos
   dialect: "postgres", //es la base de datos que vamos a usar
   host: "localhost", // es el servidor que vamos a usar o la direccion ip del servidor
   username: "postgres", //es el nombre administrador simpre es postgres
