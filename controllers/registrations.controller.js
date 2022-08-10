@@ -1,6 +1,6 @@
 //Models
 const { Registrations } = require("../models/registrations.model");
-
+//consultar todos los usuarios
 const getAllRegistrations = async (req, res, next) => {
   try {
     const registrations = await Registrations.findAll(); //aqui estamos buscando todos los usuarios de la base de datos con async await
@@ -12,7 +12,28 @@ const getAllRegistrations = async (req, res, next) => {
     console.log(err);
   }
 };
+//consultar un usuario por id
+const getRegistrationsById = async (req, res, next) => {
+  try {
+    const { id } = req.params; //aqui estamos obteniendo el parametro id que viene en la ruta por que es dinamico
 
+    const registration = await Registrations.findOne({ where: { id } }); //solo queremos un recurso y encuentre el usuario que coincida con el criterio de busqueda
+
+    if (!registration) {
+      return res.status(404).json({
+        //estamos validando si el usuario no existe arroje un error 404
+        status: "error",
+        message: "Registration not found",
+      });
+    }
+    res.status(200).json({
+      registration,
+    });
+  } catch (err) {
+    console.log(err);
+  }
+};
+//crear un usuario
 const createRegistrations = async (req, res, next) => {
   try {
     const { entranceTime } = req.body; //los datos que vienen del cliente simpre los vamos a encontrar en el metodo body
@@ -22,7 +43,6 @@ const createRegistrations = async (req, res, next) => {
     });
 
     res.status(201).json({
-      status: "success",
       newRegistrations,
     });
   } catch (err) {
@@ -30,27 +50,6 @@ const createRegistrations = async (req, res, next) => {
   }
 };
 
-const getRegistrationsById = async (req, res, next) => {
-  try {
-    const { id } = req.params; //aqui estamos obteniendo el parametro id que viene en la ruta por que es dinamico
-
-    const registrations = await Registrations.findOne({ where: { id } }); //solo queremos un recurso y encuentre el usuario que coincida con el criterio de busqueda
-
-    if (!registrations) {
-      return res.status(404).json({
-        //estamos validando si el suario no existe arroje un error 404
-        status: "error",
-        message: "Registration not found",
-      });
-    }
-    res.status(200).json({
-      status: "success",
-      registrations,
-    });
-  } catch (err) {
-    console.log(err);
-  }
-};
 //actualizar un usuario
 const updateRegistrations = async (req, res, next) => {
   try {
@@ -65,10 +64,14 @@ const updateRegistrations = async (req, res, next) => {
         message: "Registration not found",
       });
     }
-
-    await registration.update({ exitTime, status: "out" }); //aqui estamos actualizando el usuario porque ya sabemos que existe
-    res.status(204).json({ status: "success", message: "User updated" });
-  } catch (err) {}
+    await registration.update({
+      exitTime,
+      status: "out",
+    }); //aqui estamos actualizando el usuario porque ya sabemos que existe
+    res.status(204).json({ status: "success" });
+  } catch (err) {
+    console.log(err);
+  }
 };
 //eliminar un usuario
 const deleteRegistrations = async (req, res, next) => {

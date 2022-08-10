@@ -1,4 +1,7 @@
 Semana 1: Check-in / Check-out
+
+image.png
+
 “Bienvenido a nuestra empresa, esperamos que te sientas a gusto trabajando aquí, se te contrato para ayudarnos en el desarrollo de back-end, normalmente nos llegan clientes y esos clientes nos especifican que es lo que necesitan y nosotros desarrollamos la solución más efectiva.
 A lo largo de tu estadía con nosotros, se te proporcionara diferentes clientes para que nos ayudes a entregar un proyecto eficaz.
 Tu primer cliente de hecho ya llego y nos dejó los siguientes requerimientos:

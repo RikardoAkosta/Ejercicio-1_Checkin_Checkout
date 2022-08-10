@@ -22,7 +22,7 @@ db.authenticate() //esta funcion es para verificar si la conexion esta bien o no
 //luego que nos hemos autenticado con la db podemos crear las tablas que vamos a usar
 
 db.sync() //esta funcion buscar y no  encuentra debera  crear las tablas que vamos a usar
-  .then(() => console.log("DB async"))
+  .then(() => console.log("DB async")) //base de datos sincronizada
   .catch(err => console.log(err));
 
 app.listen(4001, () => {
